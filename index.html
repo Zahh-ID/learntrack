@@ -399,6 +399,164 @@ a{text-decoration:none;color:inherit}
 .sidebar-anim .ni:nth-child(4){animation-delay:.36s}
 .sidebar-anim .ni:nth-child(5){animation-delay:.42s}
 .sidebar-anim .sb-foot{animation-delay:.50s}
+
+/* ============================
+   RESPONSIVE — MOBILE & TABLET
+   ============================ */
+
+/* Mobile hamburger button */
+.mob-menu-btn{display:none;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:transparent;border:1.5px solid var(--g200);cursor:pointer;color:var(--g700)}
+.mob-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:299;backdrop-filter:blur(3px)}
+.mob-overlay.open{display:block}
+
+/* Mobile bottom nav for dashboards */
+.mob-bottom-nav{display:none}
+
+/* ---- TABLET (≤900px) ---- */
+@media(max-width:900px){
+  /* Navbar */
+  .navbar{padding:0 20px;height:56px}
+  /* Hero */
+  .hero{padding:60px 24px 48px}
+  .hero h1{font-size:clamp(2rem,6vw,3rem)}
+  .hero-stats{gap:36px;padding-top:36px;margin-top:36px}
+  .hs-num{font-size:1.8rem}
+  /* Sections */
+  .section{padding:56px 24px}
+  .feat-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .cta-band{margin:0 24px 56px;padding:40px 32px;flex-direction:column;gap:20px;text-align:center}
+  .cta-btns{justify-content:center}
+  /* About */
+  .about-hero{padding:56px 24px}
+  .about-body{padding:48px 24px}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-vis{height:200px}
+  /* Dashboard layout */
+  .dash-layout{flex-direction:column}
+  .sidebar{display:none;position:fixed;left:0;top:0;bottom:0;z-index:300;width:260px;box-shadow:4px 0 24px rgba(0,0,0,.15);overflow-y:auto}
+  .sidebar.mob-open{display:flex}
+  .dash-main{width:100%;min-height:100vh}
+  .dash-hd{padding:18px 16px;display:flex;align-items:center;gap:12px}
+  .dash-hd h1{font-size:1.1rem}
+  .dash-c{padding:14px 14px}
+  .g4{grid-template-columns:1fr 1fr}
+  .g2{grid-template-columns:1fr}
+  /* Charts full width */
+  .chart-svg-wrap{height:130px}
+  /* How It Works */
+  .hiw-step + .hiw-step{margin-top:0}
+}
+
+/* ---- MOBILE (≤600px) ---- */
+@media(max-width:600px){
+  /* Navbar */
+  .navbar{padding:0 16px;height:54px}
+  .nav-right .nav-link{display:none}
+  .mob-menu-btn{display:flex}
+
+  /* Hero */
+  .hero{padding:48px 18px 40px;background-size:36px 36px}
+  .hero h1{font-size:clamp(1.75rem,7vw,2.6rem);margin-bottom:18px}
+  .hero-p{font-size:.88rem;margin-bottom:28px}
+  .hero-btns{flex-direction:column;gap:10px}
+  .btn-hw,.btn-hg{width:100%;justify-content:center}
+  .hero-stats{flex-direction:row;flex-wrap:wrap;gap:20px 32px;padding-top:28px;margin-top:28px}
+  .hs-num{font-size:1.6rem}
+  .hs-lbl{font-size:.72rem}
+
+  /* Sections */
+  .section{padding:44px 16px}
+  .feat-grid{grid-template-columns:1fr;gap:12px}
+  .cta-band{margin:0 16px 44px;padding:32px 22px}
+  .cta-band h2{font-size:1.3rem}
+  .cta-btns{flex-direction:column;gap:9px;width:100%}
+  .cta-btns .btn{width:100%;justify-content:center}
+
+  /* About */
+  .about-hero{padding:44px 16px}
+  .about-hero h1{font-size:1.7rem}
+  .about-body{padding:36px 16px}
+  .about-grid{grid-template-columns:1fr}
+  .about-vis{display:none}
+  .roles-grid{grid-template-columns:1fr}
+
+  /* How It Works */
+  .hiw-grid-wrap{grid-template-columns:1fr 1fr !important;gap:14px !important}
+  .ob-connector{display:none}
+
+  /* Auth */
+  .auth-wrap{padding:24px 14px;align-items:flex-start;padding-top:32px}
+  .auth-card{padding:28px 20px}
+  .frow{grid-template-columns:1fr}
+
+  /* Dashboard */
+  .dash-c{padding:12px 12px}
+  .g4{grid-template-columns:1fr 1fr;gap:10px}
+  .g2{grid-template-columns:1fr}
+  .g3{grid-template-columns:1fr}
+  .sc-v{font-size:1.5rem}
+  .dash-hd{padding:14px 14px}
+  .dash-hd h1{font-size:1rem}
+
+  /* Tables scroll on mobile */
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:13px}
+  .tbl{min-width:480px}
+
+  /* Student roster 1 col on mobile */
+  .card-b[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+
+  /* Profile grid 1 col */
+  .prof-grid{grid-template-columns:1fr}
+  .pf.span2{grid-column:1}
+
+  /* Sidebar as drawer */
+  .sidebar{width:82vw;max-width:280px}
+
+  /* Mobile bottom tab bar for dashboard */
+  .mob-bottom-nav{
+    display:flex;position:fixed;bottom:0;left:0;right:0;
+    background:var(--white);border-top:1px solid var(--gray-200);
+    z-index:200;height:60px;align-items:stretch;
+  }
+  .mob-tab{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;font-size:.6rem;font-weight:600;color:var(--gray-500);
+    cursor:pointer;padding:4px 0;border:none;background:transparent;font-family:inherit;
+    transition:color .15s;
+  }
+  .mob-tab svg{width:20px;height:20px;flex-shrink:0}
+  .mob-tab.active{color:var(--g700)}
+  .mob-tab.active svg{stroke:var(--g700)}
+  /* Push main content up so bottom nav doesn't cover it */
+  .dash-main{padding-bottom:60px}
+
+  /* Reflection layout on mobile */
+  #tc-reflection .dash-c{flex-direction:column !important}
+  #tc-reflection .dash-c > div:first-child{width:100% !important}
+
+  /* Status filter panel */
+  #status-filter-panel .card-b{max-height:260px;overflow-y:auto}
+
+  /* Modal full-width on mobile */
+  .modal{padding:24px 18px;border-radius:14px;width:95%}
+  .overlay .modal{max-width:none;width:95%}
+}
+
+/* Table overflow scroll on mobile */
+@media(max-width:600px){
+  .card table,.card .tbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  /* How It Works 2-col grid on mobile */
+  #pg-about .hiw-grid{grid-template-columns:1fr 1fr !important;gap:12px !important}
+  /* Stat cards single row scroll on mobile */
+  .g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  /* Status filter panel */
+  #status-filter-panel{margin-bottom:12px}
+  /* Reflection layout */
+  #tc-reflection .dash-c{flex-direction:column !important}
+  #tc-reflection .dash-c > div:first-child{width:100% !important;min-width:0 !important}
+  /* Sidebar close btn */
+  .sb-logo::after{content:'✕';margin-left:auto;font-size:1.1rem;cursor:pointer;color:var(--gray-400);display:none}
+}
 </style>
 </head>
 <body>
@@ -615,13 +773,16 @@ a{text-decoration:none;color:inherit}
       </div>
       <!-- STUDENT FORM -->
       <div id="su-sf">
-        <div class="frow"><div class="fg"><label class="fl">First Name</label><input class="fi" type="text" placeholder="First Name"></div><div class="fg"><label class="fl">Last Name</label><input class="fi" type="text" placeholder="Last Name"></div></div>
-        <div class="fg"><label class="fl">NISN</label><input class="fi" type="text" placeholder="10-digit Student ID (NISN)" maxlength="10"></div>
+        <div class="frow">
+          <div class="fg"><label class="fl">First Name</label><input class="fi" type="text" placeholder="First Name" id="su-fn"></div>
+          <div class="fg"><label class="fl">Last Name</label><input class="fi" type="text" placeholder="Last Name" id="su-ln"></div>
+        </div>
+        <div class="fg"><label class="fl">NISN</label><input class="fi" type="text" placeholder="10-digit Student ID (NISN)" maxlength="10" id="su-nisn"></div>
         <div class="frow">
           <div class="fg"><label class="fl">Grade</label>
-            <select class="fi fsel"><option value="">Select Grade</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select>
+            <select class="fi fsel" id="su-grade"><option value="">Select Grade</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select>
           </div>
-          <div class="fg"><label class="fl">Offering</label><input class="fi" type="text" placeholder="e.g. A"></div>
+          <div class="fg"><label class="fl">Offering</label><input class="fi" type="text" placeholder="e.g. A" id="su-offering"></div>
         </div>
         <div class="fg">
           <label class="fl">Password</label>
@@ -636,13 +797,16 @@ a{text-decoration:none;color:inherit}
       </div>
       <!-- TEACHER FORM -->
       <div id="su-tf" style="display:none">
-        <div class="frow"><div class="fg"><label class="fl">First Name</label><input class="fi" type="text" placeholder="First Name"></div><div class="fg"><label class="fl">Last Name</label><input class="fi" type="text" placeholder="Last Name"></div></div>
-        <div class="fg"><label class="fl">School Code</label><input class="fi" type="text" placeholder="School Code"></div>
+        <div class="frow">
+          <div class="fg"><label class="fl">First Name</label><input class="fi" type="text" placeholder="First Name" id="su-tfn"></div>
+          <div class="fg"><label class="fl">Last Name</label><input class="fi" type="text" placeholder="Last Name" id="su-tln"></div>
+        </div>
+        <div class="fg"><label class="fl">School Code</label><input class="fi" type="text" placeholder="School Code (used to login)" id="su-tcode"></div>
         <div class="frow">
           <div class="fg"><label class="fl">Grade</label>
-            <select class="fi fsel"><option value="">Select Grade</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select>
+            <select class="fi fsel" id="su-tgrade"><option value="">Select Grade</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select>
           </div>
-          <div class="fg"><label class="fl">Offering</label><input class="fi" type="text" placeholder="e.g. A"></div>
+          <div class="fg"><label class="fl">Offering</label><input class="fi" type="text" placeholder="e.g. A" id="su-toffering"></div>
         </div>
         <div class="fg">
           <label class="fl">Password</label>
@@ -664,7 +828,10 @@ a{text-decoration:none;color:inherit}
 
 <!-- ================================================================ STUDENT DASHBOARD -->
 <div class="page dash-layout" id="pg-student">
-  <aside class="sidebar sidebar-anim">
+  <!-- Mobile overlay for sidebar -->
+  <div class="mob-overlay" id="st-mob-overlay" onclick="closeMobSidebar('st')"></div>
+  <aside class="sidebar sidebar-anim" id="st-sidebar">
+    <div class="sb-logo"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#1a6b37"/><path d="M16 8L6 13l10 5 10-5-10-5z" fill="#6fd97a"/><path d="M10 15.8v4.7s2.2 2.2 6 2.2 6-2.2 6-2.2v-4.7" stroke="#6fd97a" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="22" y1="13" x2="22" y2="19" stroke="#6fd97a" stroke-width="1.6" stroke-linecap="round"/></svg> LearnTrack</div>
     <div class="sb-logo"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#1a6b37"/><path d="M16 8L6 13l10 5 10-5-10-5z" fill="#6fd97a"/><path d="M10 15.8v4.7s2.2 2.2 6 2.2 6-2.2 6-2.2v-4.7" stroke="#6fd97a" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="22" y1="13" x2="22" y2="19" stroke="#6fd97a" stroke-width="1.6" stroke-linecap="round"/></svg> LearnTrack</div>
     <div class="sb-user-wrap">
       <div class="sb-user" onclick="stT('profile')">
@@ -682,8 +849,22 @@ a{text-decoration:none;color:inherit}
     <div class="sb-foot"><div class="logout-row" onclick="doLogout()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log out</div></div>
   </aside>
   <main class="dash-main">
-
-    <!-- DASHBOARD TAB -->
+    <!-- Mobile top bar -->
+    <div id="st-topbar" style="display:none;background:var(--g700);padding:0 16px;height:54px;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:150">
+      <button onclick="openMobSidebar('st')" style="background:rgba(255,255,255,.15);border:none;border-radius:9px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:white;cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <span style="font-family:'Sora',sans-serif;font-weight:700;color:white;font-size:.95rem">LearnTrack</span>
+      <div class="uav" style="width:32px;height:32px;font-size:.8rem;cursor:pointer" onclick="stT('profile')"><span>A</span></div>
+    </div>
+    <!-- Mobile bottom nav -->
+    <nav class="mob-bottom-nav" id="st-bot-nav">
+      <button class="mob-tab active" onclick="stT('dashboard');setMobTab('st',0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Home</button>
+      <button class="mob-tab" onclick="stT('grade');setMobTab('st',1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Grades</button>
+      <button class="mob-tab" onclick="stT('status');setMobTab('st',2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Status</button>
+      <button class="mob-tab" onclick="stT('reflection');setMobTab('st',3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Reflect</button>
+      <button class="mob-tab" onclick="stT('profile');setMobTab('st',4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</button>
+    </nav>
     <div id="st-dashboard">
       <div class="dash-hd"><div class="dash-ey">Welcome back, Adi!</div><h1>Here's your learning summary.</h1></div>
       <div class="dash-c">
@@ -909,7 +1090,8 @@ a{text-decoration:none;color:inherit}
 
 <!-- ================================================================ TEACHER DASHBOARD -->
 <div class="page dash-layout" id="pg-teacher">
-  <aside class="sidebar sidebar-anim">
+  <div class="mob-overlay" id="tc-mob-overlay" onclick="closeMobSidebar('tc')"></div>
+  <aside class="sidebar sidebar-anim" id="tc-sidebar">
     <div class="sb-logo"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#1a6b37"/><path d="M16 8L6 13l10 5 10-5-10-5z" fill="#6fd97a"/><path d="M10 15.8v4.7s2.2 2.2 6 2.2 6-2.2 6-2.2v-4.7" stroke="#6fd97a" stroke-width="1.6" stroke-linecap="round" fill="none"/><line x1="22" y1="13" x2="22" y2="19" stroke="#6fd97a" stroke-width="1.6" stroke-linecap="round"/></svg> LearnTrack</div>
     <div class="sb-user-wrap">
       <div class="sb-user" onclick="tcT('profile')">
@@ -918,17 +1100,31 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
     <nav class="sb-nav">
-      <div class="ni active" onclick="tcT('dashboard')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</div>
-      <div class="ni" onclick="tcT('students')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Student Data</div>
-      <div class="ni" onclick="tcT('upload')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload Grades</div>
-      <div class="ni" onclick="tcT('reflection')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>Reflection</div>
-      <div class="ni" onclick="tcT('profile')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</div>
+      <div class="ni active" onclick="tcT('dashboard');closeMobSidebar('tc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</div>
+      <div class="ni" onclick="tcT('students');closeMobSidebar('tc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Student Data</div>
+      <div class="ni" onclick="tcT('upload');closeMobSidebar('tc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload Grades</div>
+      <div class="ni" onclick="tcT('reflection');closeMobSidebar('tc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>Reflection</div>
+      <div class="ni" onclick="tcT('profile');closeMobSidebar('tc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</div>
     </nav>
     <div class="sb-foot"><div class="logout-row" onclick="doLogout()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log out</div></div>
   </aside>
   <main class="dash-main">
-
-    <!-- TC DASHBOARD -->
+    <!-- Mobile top bar -->
+    <div id="tc-topbar" style="display:none;background:var(--g700);padding:0 16px;height:54px;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:150">
+      <button onclick="openMobSidebar('tc')" style="background:rgba(255,255,255,.15);border:none;border-radius:9px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:white;cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <span style="font-family:'Sora',sans-serif;font-weight:700;color:white;font-size:.95rem">LearnTrack</span>
+      <div class="uav" style="width:32px;height:32px;font-size:.8rem;cursor:pointer;background:linear-gradient(135deg,var(--g700),var(--g900))" onclick="tcT('profile')"><span>B</span></div>
+    </div>
+    <!-- Mobile bottom nav -->
+    <nav class="mob-bottom-nav" id="tc-bot-nav">
+      <button class="mob-tab active" onclick="tcT('dashboard');setMobTab('tc',0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</button>
+      <button class="mob-tab" onclick="tcT('students');setMobTab('tc',1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Students</button>
+      <button class="mob-tab" onclick="tcT('upload');setMobTab('tc',2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload</button>
+      <button class="mob-tab" onclick="tcT('reflection');setMobTab('tc',3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Reflect</button>
+      <button class="mob-tab" onclick="tcT('profile');setMobTab('tc',4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</button>
+    </nav>
     <div id="tc-dashboard">
       <div class="dash-hd"><h1>Teacher Dashboard</h1><p class="dash-ey" style="margin-top:4px">Welcome, Budi Santoso! Here's your class overview.</p></div>
       <div class="dash-c">
@@ -1192,12 +1388,30 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <script>
+// ==================== USER DATABASE ====================
+const USERS_KEY = 'learntrack_users_v2';
+
+function loadUsers() {
+  try { const r = localStorage.getItem(USERS_KEY); return r ? JSON.parse(r) : []; } catch(e) { return []; }
+}
+function saveUsers(arr) {
+  try { localStorage.setItem(USERS_KEY, JSON.stringify(arr)); } catch(e) {}
+}
+// Seed demo accounts
+(function seedDemo() {
+  const u = loadUsers();
+  const colors = ['linear-gradient(135deg,#5aad63,#1a6b37)','linear-gradient(135deg,#3b82f6,#1d4ed8)','linear-gradient(135deg,#f59e0b,#b45309)','linear-gradient(135deg,#a855f7,#7c3aed)','linear-gradient(135deg,#ef4444,#b91c1c)'];
+  if(!u.find(x=>x.id==='1234567890'))
+    u.push({role:'student',id:'1234567890',password:'123456',firstName:'Adi',lastName:'Nugroho',fullName:'Adi Nugroho',grade:'Grade 11',offering:'A',initials:'AN',avatarColor:colors[0],school:'SMA Negeri 1 Malang'});
+  if(!u.find(x=>x.id==='teacher'))
+    u.push({role:'teacher',id:'teacher',password:'123456',firstName:'Budi',lastName:'Santoso',fullName:'Budi Santoso, S.Pd.',grade:'Grade 11',offering:'A',initials:'BS',avatarColor:'linear-gradient(135deg,var(--g700),var(--g900))',school:'SMA Negeri 1 Malang'});
+  saveUsers(u);
+})();
+
+let loggedInUser = null;
+
 // ==================== STATE ====================
 let siRole = 'student', suRole_ = 'student';
-const DEMO = {
-  student: { id:'1234567890', p:'123456' },
-  teacher: { id:'teacher', p:'123456' }
-};
 
 // ==================== STUDENT DATA ====================
 const STUDENTS = [
@@ -1228,27 +1442,21 @@ function go(id) {
   if(id==='pg-home') { startCountUp(); setTimeout(()=>initScrollAnims(pg), 80); }
   if(id==='pg-about') setTimeout(()=>initScrollAnims(pg), 80);
   if(id==='pg-signin'||id==='pg-signup') {
-    // Animate auth card
     const card = pg.querySelector('.auth-card');
     if(card) { card.style.opacity='0'; card.style.transform='scale(.88) translateY(18px)'; void card.offsetWidth; card.style.transition='opacity .4s ease,transform .4s cubic-bezier(.34,1.3,.64,1)'; card.style.opacity='1'; card.style.transform=''; }
   }
-  if(id==='pg-student') { animateDash('pg-student'); stT('dashboard'); }
-  if(id==='pg-teacher') { animateDash('pg-teacher'); tcT('dashboard'); tcSelectStudent(0,null); }
+  if(id==='pg-student') { animateDash('pg-student'); stT('dashboard'); setTimeout(initMobileUI,50); }
+  if(id==='pg-teacher') { animateDash('pg-teacher'); tcT('dashboard'); tcSelectStudent(0,null); setTimeout(initMobileUI,50); }
 }
 
-// Re-trigger animation by re-cloning anim elements
 function animateDash(pgId) {
   const pg = document.getElementById(pgId);
-  // Animate sidebar
   const sb = pg.querySelector('.sidebar');
   if(sb) { sb.classList.remove('sidebar-anim'); void sb.offsetWidth; sb.classList.add('sidebar-anim'); }
-  // Animate animated elements (remove and re-add class)
-  const animEls = pg.querySelectorAll('.anim-pop, .anim-slide, .anim-fade');
-  animEls.forEach(el => {
+  pg.querySelectorAll('.anim-pop, .anim-slide, .anim-fade').forEach(el => {
     const cls = el.classList.contains('anim-pop') ? 'anim-pop' : el.classList.contains('anim-slide') ? 'anim-slide' : 'anim-fade';
     el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls);
   });
-  // Re-trigger SVG chart animations
   setTimeout(()=>{
     pg.querySelectorAll('.chart-line-anim,.chart-fill-anim,.chart-dot-anim').forEach(el=>{
       el.style.animation='none'; void el.offsetWidth; el.style.animation='';
@@ -1256,30 +1464,17 @@ function animateDash(pgId) {
   }, 100);
 }
 
-// ==================== COUNT-UP ANIMATION ====================
+// ==================== COUNT-UP ====================
 let countStarted = false;
 function countUp(elId, target, suffix, duration) {
-  const el = document.getElementById(elId);
-  if(!el) return;
-  const start = 0;
-  const step = target / (duration / 16);
-  let current = start;
-  const timer = setInterval(() => {
-    current += step;
-    if(current >= target) { current = target; clearInterval(timer); }
-    el.textContent = Math.floor(current) + suffix;
-  }, 16);
+  const el = document.getElementById(elId); if(!el) return;
+  const step = target / (duration / 16); let current = 0;
+  const timer = setInterval(() => { current += step; if(current >= target) { current = target; clearInterval(timer); } el.textContent = Math.floor(current) + suffix; }, 16);
 }
 function startCountUp() {
-  if(countStarted) return;
-  countStarted = true;
-  setTimeout(() => {
-    countUp('cnt-sem', 6, '', 1200);
-    countUp('cnt-sta', 3, '', 1000);
-    countUp('cnt-pct', 100, '%', 1600);
-  }, 300);
+  if(countStarted) return; countStarted = true;
+  setTimeout(() => { countUp('cnt-sem',6,'',1200); countUp('cnt-sta',3,'',1000); countUp('cnt-pct',100,'%',1600); }, 300);
 }
-// Start on initial load
 window.addEventListener('load', startCountUp);
 
 // ==================== AUTH ====================
@@ -1299,24 +1494,135 @@ function suR(r) {
 }
 
 function doSignIn() {
-  const u = document.getElementById('si-u').value.trim();
-  const p = document.getElementById('si-p').value.trim();
-  if(!u||!p) { toast('Please fill in all fields','error'); return; }
-  const d = DEMO[siRole];
-  if(u!==d.id||p!==d.p) {
-    const hint = siRole==='student' ? `NISN: "${d.id}" / pass: "${d.p}"` : `School Code: "${d.id}" / pass: "${d.p}"`;
-    openModal(true,'Invalid Credentials','Wrong credentials. Demo: '+hint,[{l:'Try Again',c:'btn btn-primary btn-sm',f:'closeModal()'}]);
+  const id = document.getElementById('si-u').value.trim();
+  const pw = document.getElementById('si-p').value.trim();
+  if(!id||!pw) { toast('Please fill in all fields','error'); return; }
+  const users = loadUsers();
+  const user = users.find(u => u.role === siRole && u.id === id && u.password === pw);
+  if(!user) {
+    openModal(true,'Login Failed',
+      `No ${siRole} account found. Check your ${siRole==='student'?'NISN':'School Code'} and password, or sign up first.`,
+      [{l:'Try Again',c:'btn btn-primary btn-sm',f:'closeModal()'},
+       {l:'Sign Up',c:'btn btn-outline btn-sm',f:"closeModal();go('pg-signup')"}]);
     return;
   }
-  toast(`Signed in as ${siRole}`,'success');
+  loggedInUser = user;
+  applyUserToDashboard(user);
+  toast(`Welcome back, ${user.firstName}!`,'success');
   setTimeout(()=>{ go(siRole==='teacher'?'pg-teacher':'pg-student'); },600);
 }
 
 function doSignUp() {
-  openModal(false,'Account Created!',`Your ${suRole_} account has been created. You can now sign in.`,[
-    {l:'Go to Sign In',c:'btn btn-primary btn-sm',f:"closeModal();go('pg-signin')"},
-    {l:'Close',c:'btn btn-outline btn-sm',f:'closeModal()'}
-  ]);
+  const isStu = suRole_ === 'student';
+  const firstName = val(isStu?'su-fn':'su-tfn');
+  const lastName  = val(isStu?'su-ln':'su-tln');
+  const id        = val(isStu?'su-nisn':'su-tcode');
+  const grade     = val(isStu?'su-grade':'su-tgrade');
+  const offering  = val(isStu?'su-offering':'su-toffering');
+  const pw1       = val(isStu?'su-p1':'su-tp1');
+  const pw2       = val(isStu?'su-p2':'su-tp2');
+  const agreed    = document.getElementById('su-tc').checked;
+
+  if(!firstName||!lastName) { toast('Please enter your first and last name','error'); return; }
+  if(!id) { toast(isStu?'Please enter your NISN':'Please enter a School Code','error'); return; }
+  if(isStu && id.length < 5) { toast('NISN must be at least 5 digits','error'); return; }
+  if(!grade) { toast('Please select your grade','error'); return; }
+  if(!offering) { toast('Please enter your offering / class','error'); return; }
+  if(pw1.length < 6) { toast('Password must be at least 6 characters','error'); return; }
+  if(pw1 !== pw2) { toast('Passwords do not match','error'); return; }
+  if(!agreed) { toast('Please agree to the Terms and Conditions','error'); return; }
+
+  const users = loadUsers();
+  if(users.find(u => u.role === suRole_ && u.id === id)) {
+    toast(isStu?'An account with this NISN already exists':'This School Code is already registered','error'); return;
+  }
+
+  const avatarColors = [
+    'linear-gradient(135deg,#5aad63,#1a6b37)','linear-gradient(135deg,#3b82f6,#1d4ed8)',
+    'linear-gradient(135deg,#f59e0b,#b45309)','linear-gradient(135deg,#a855f7,#7c3aed)',
+    'linear-gradient(135deg,#0ea5e9,#0369a1)','linear-gradient(135deg,#10b981,#059669)',
+    'linear-gradient(135deg,#f43f5e,#be123c)','linear-gradient(135deg,#8b5cf6,#6d28d9)'
+  ];
+  const avatarColor = avatarColors[Math.floor(Math.random()*avatarColors.length)];
+  const initials = (firstName[0]+(lastName[0]||'')).toUpperCase();
+
+  users.push({ role:suRole_, id, password:pw1, firstName, lastName,
+    fullName:`${firstName} ${lastName}`, grade, offering, initials, avatarColor,
+    school:'SMA Negeri 1 Malang' });
+  saveUsers(users);
+
+  // Clear form fields
+  ['su-fn','su-ln','su-nisn','su-offering','su-p1','su-p2',
+   'su-tfn','su-tln','su-tcode','su-toffering','su-tp1','su-tp2'].forEach(k=>{
+    const el=document.getElementById(k); if(el) el.value='';
+  });
+  ['su-grade','su-tgrade'].forEach(k=>{ const el=document.getElementById(k); if(el) el.value=''; });
+  document.getElementById('su-tc').checked=false;
+
+  openModal(false,'Account Created!',
+    `Welcome, ${firstName}! Your ${suRole_} account is ready. Sign in with your ${isStu?'NISN':'School Code'}: ${id}`,
+    [{l:'Go to Sign In',c:'btn btn-primary btn-sm',f:"closeModal();go('pg-signin')"},
+     {l:'Close',c:'btn btn-outline btn-sm',f:'closeModal()'}]);
+}
+
+function val(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+
+// Apply logged-in user's info to the dashboard UI
+function applyUserToDashboard(user) {
+  const isStu = user.role === 'student';
+  const pg = isStu ? 'pg-student' : 'pg-teacher';
+  const prefix = isStu ? 'st' : 'tc';
+
+  // Sidebar avatar + name
+  const avSm = document.getElementById(prefix+'-uav-sm');
+  if(avSm) { avSm.style.background=user.avatarColor; avSm.innerHTML=`<span>${user.initials}</span>`; }
+  const uname = document.querySelector(`#${pg} .uname`);
+  if(uname) uname.textContent = user.fullName;
+  const ubadge = document.querySelector(`#${pg} .ubadge`);
+  if(ubadge) ubadge.textContent = `${user.grade} · Offering ${user.offering}`;
+
+  // Dashboard header
+  if(isStu) {
+    const ey = document.querySelector('#st-dashboard .dash-ey');
+    if(ey) ey.textContent = `Welcome back, ${user.firstName}!`;
+  } else {
+    const hd = document.querySelector('#tc-dashboard .dash-hd p.dash-ey');
+    if(hd) hd.textContent = `Welcome, ${user.fullName}! Here's your class overview.`;
+  }
+
+  // Profile large avatar
+  const profAv = document.getElementById(prefix+'-prof-av');
+  if(profAv) {
+    profAv.style.background = user.avatarColor;
+    const span = profAv.querySelector('span');
+    if(span) span.textContent = user.initials;
+  }
+  // Profile display name
+  const dn = document.getElementById(prefix+'-disp-name');
+  if(dn) dn.textContent = user.fullName;
+
+  // Profile fields - update view and edit values
+  const fields = document.getElementById(prefix+'-prof-fields');
+  if(fields) {
+    const map = isStu
+      ? [user.fullName, user.id, user.grade.replace('Grade ',''), user.offering, user.school||'—', '—']
+      : [user.fullName, '—', '—', '—', user.school||'—', '—', '—'];
+    fields.querySelectorAll('.pf').forEach((pf, i) => {
+      if(map[i]) {
+        const v = pf.querySelector('.pf-view'); if(v) v.textContent = map[i];
+        const e = pf.querySelector('.pf-edit, input, select'); if(e) e.value = map[i];
+      }
+    });
+  }
+
+  // NISN badge on profile
+  if(isStu) {
+    const nisnBadge = document.querySelector('#st-profile .ubadge');
+    if(nisnBadge) nisnBadge.textContent = `NISN: ${user.id}`;
+  }
 }
 
 // ==================== PASSWORD TOGGLE ====================
@@ -1783,6 +2089,45 @@ function openGitHubGuide() {
 function closeGitHubGuide() {
   document.getElementById('gh-overlay').classList.remove('open');
 }
+
+// ==================== MOBILE RESPONSIVE ====================
+function isMobile() { return window.innerWidth <= 600; }
+
+function initMobileUI() {
+  const isM = isMobile();
+  ['st','tc'].forEach(p => {
+    const topbar = document.getElementById(p+'-topbar');
+    if(topbar) topbar.style.display = isM ? 'flex' : 'none';
+  });
+}
+
+function openMobSidebar(prefix) {
+  const sb = document.getElementById(prefix+'-sidebar');
+  const ov = document.getElementById(prefix+'-mob-overlay');
+  if(sb) sb.classList.add('mob-open');
+  if(ov) ov.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobSidebar(prefix) {
+  const sb = document.getElementById(prefix+'-sidebar');
+  const ov = document.getElementById(prefix+'-mob-overlay');
+  if(sb) sb.classList.remove('mob-open');
+  if(ov) ov.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function setMobTab(prefix, idx) {
+  const nav = document.getElementById(prefix+'-bot-nav');
+  if(!nav) return;
+  nav.querySelectorAll('.mob-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+}
+
+window.addEventListener('resize', () => {
+  initMobileUI();
+  if(!isMobile()) { closeMobSidebar('st'); closeMobSidebar('tc'); }
+});
+window.addEventListener('load', initMobileUI);
+
 const obServer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting) entry.target.classList.add('vis');
